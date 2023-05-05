@@ -1,12 +1,13 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+import undetected_chromedriver as uc
 import time
 import json
 from tqdm import tqdm
 
 class FBbot:
     def __init__(self,link):
-        self.driver = webdriver.Chrome(executable_path='C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe')
+        self.driver = uc.Chrome()
         self.driver.get(link)
         time.sleep(1)
         with open('loginData.json','r') as f:
